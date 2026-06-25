@@ -1,0 +1,27 @@
+{
+  "short_name": "DoumdeliMed",
+  "name": "Doumdeli Médical - الأمل في الشفاء",
+  "description": "منصتكم الطبية والوسيط المعتمد لعلاج الأمراض المستعصية والمزمنة بأحدث البروتوكولات العلاجية العالمية.",
+  "icons": [
+    {
+      "src": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=192",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#f8fafc",
+  "theme_color": "#0284c7",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["medical", "health"],
+  "lang": "ar-SA",
+  "dir": "rtl"
+}
