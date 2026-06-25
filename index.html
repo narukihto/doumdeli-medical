@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doumdeli Médical - الأمل في الشفاء للأمراض المستعصية</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts : Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Manifest & Theme Color -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0284c7">
+
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- ========================================== -->
+  <!-- 1. شريط التنقل العلوي (NAVBAR) -->
+  <!-- ========================================== -->
+  <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-sky-600 flex items-center justify-between text-white justify-center shadow-md shadow-sky-200">
+          <i class="fa-solid fa-heart-pulse text-2xl animate-pulse"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-extrabold text-sky-950 tracking-wide">Doumdeli <span class="text-emerald-500">Médical</span></h1>
+          <p class="text-xs text-slate-500 font-medium">جسر الأمل والشفاء العالمي</p>
+        </div>
+      </div>
+      
+      <nav class="hidden md:flex items-center gap-6 font-semibold text-slate-600">
+        <a href="#hero" class="hover:text-sky-600 transition">الرئيسية</a>
+        <a href="#diseases" class="hover:text-sky-600 transition">الأمراض والعلاجات</a>
+        <a href="#hospital-info" class="hover:text-sky-600 transition">عن المستشفى</a>
+        <a href="#consultation" class="hover:text-sky-600 transition">طلب استشارة</a>
+      </nav>
+
+      <a href="#consultation" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-5 py-2.5 rounded-xl shadow-md shadow-emerald-100 transition flex items-center gap-2">
+        <i class="fa-solid fa-file-medical"></i> استشارة فورية
+      </a>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 2. قسم البطولة والترحيب (HERO SECTION) -->
+  <!-- ========================================== -->
+  <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-sky-50 via-white to-slate-50 py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+      <div class="text-right">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-100 text-sky-700 font-bold text-sm mb-6">
+          <i class="fa-solid fa-certificate text-emerald-500"></i> الطب المتقدم والرعاية الحقيقية
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
+          لا وجود لمرض مستعصٍ.. <br>
+          <span class="bg-gradient-to-r from-sky-600 to-emerald-500 bg-clip-text text-transparent">هناك دائماً أمل في الشفاء</span>
+        </h2>
+        <p class="text-lg text-slate-600 font-medium leading-relaxed mb-8">
+          نحن هنا لنكون وسيطكم المعتمد مع نخبة من الأطباء والمستشفيات المتخصصة في علاج الأمراض الأكثر تعقيداً (الأورام، السكري المزمن، وغيرها) بأحدث البروتوكولات الطبية المتطورة التي أعادت الحياة والابتسامة لآلاف العائلات حول العالم.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#diseases" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-sky-200 transition text-center flex-1 sm:flex-none">
+            استكشف الحالات الطبية
+          </a>
+          <a href="#hospital-info" class="bg-white border-2 border-slate-200 hover:border-sky-500 text-slate-700 font-bold px-8 py-4 rounded-2xl transition text-center flex-1 sm:flex-none">
+            توثيق المستشفى والفيديوهات
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-tr from-sky-200 to-emerald-200 rounded-3xl filter blur-3xl opacity-30 -z-10 animate-blob"></div>
+        <img id="hero-medical-img" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800" alt="الرعاية الطبية المتقدمة" class="w-full h-[450px] object-cover rounded-3xl shadow-2xl border-4 border-white">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. قسم الأمراض المستعصية (DISEASES CONTAINER) -->
+  <!-- ========================================== -->
+  <main id="diseases" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h3 class="text-3xl font-black text-slate-900 mb-4">الأمراض التي يتخصص أطباؤنا في علاجها</h3>
+      <p class="text-slate-600 font-medium">نستعرض معكم الحالات الطبية المعقدة والبروتوكولات الشفائية المتاحة، مدعومة بالصور العلمية والفحوصات الدقيقة.</p>
+    </div>
+
+    <!-- شبكة عرض الأمراض (يتم ملؤها ديناميكياً بواسطة app.js) -->
+    <div id="diseases-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- لودر مؤقت يختفي فور عمل الـ API -->
+      <div class="col-span-full text-center py-12">
+        <i class="fa-solid fa-spinner fa-spin text-4xl text-sky-600"></i>
+        <p class="text-slate-500 font-medium mt-3">جاري تحميل الملفات الطبية والصور الحقيقية...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 4. قسم توثيق المستشفى والفيديوهات (HOSPITAL INFO) -->
+  <!-- ========================================== -->
+  <section id="hospital-info" class="bg-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div class="text-right">
+        <span class="text-emerald-400 font-bold uppercase tracking-wider text-sm block mb-2">// صرح طبي موثوق</span>
+        <h3 class="text-3xl font-black mb-6">المستشفى والمركز العلاجي المتخصص</h3>
+        <p class="text-slate-300 font-medium leading-relaxed mb-6">
+          هذا الموقع تأسس بدافع إنساني شخصي، بعد أن شهدنا حالات شفاء حقيقية داخل هذا الصرح الطبي لأقرب الناس إلينا (مثل علاج مرض السكري المزمن والمستعصي). نهدف لتعريف المرضى في كافة الدول العربية والعالم بوجود هذا المختبر والأطباء الأكفاء.
+        </p>
+        <div class="space-y-4 font-semibold text-slate-200">
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400"></i> أطباء استشاريون برتب دولية.</div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400"></i> مختبرات مجهزة لبروتوكولات التجديد الخلوي والمناعي.</div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-400"></i> نسب نجاح وشفاء حقيقية وموثقة.</div>
+        </div>
+      </div>
+      <div class="bg-slate-800 p-4 rounded-3xl border border-slate-700 shadow-2xl relative">
+        <!-- مشغل فيديو استعراضي مؤقت (سيتم تفعيله بالفيديوهات الحقيقية لاحقاً) -->
+        <div class="w-full h-72 bg-slate-950 rounded-2xl flex flex-col items-center justify-center text-center p-6 border border-dashed border-slate-700">
+          <i class="fa-solid fa-video-slash text-4xl text-slate-500 mb-4"></i>
+          <p class="text-sm font-bold text-slate-400">فيديوهات المستشفى والعمليات الحقيقية جاهزة للاستقبال</p>
+          <span class="text-xs text-slate-600 mt-2">سيتم ربط الميديا الفسيولوجية فور وضعها في المجلدات</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. استمارة الاستشارة ورفع التقارير (CONSULTATION FORM) -->
+  <!-- ========================================== -->
+  <section id="consultation" class="max-w-3xl mx-auto px-4 py-16 w-full">
+    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-10 border border-slate-100 text-right">
+      <div class="text-center mb-8">
+        <i class="fa-solid fa-notes-medical text-4xl text-emerald-500 mb-3"></i>
+        <h3 class="text-2xl font-black text-slate-900">ملف طلب الاستشارة والوساطة الطبية</h3>
+        <p class="text-sm font-medium text-slate-500 mt-2">يرجى ملء البيانات بدقة ورفع التقارير الطبية ليقوم الأطباء بمراجعتها فوراً</p>
+      </div>
+      
+      <form id="medical-form" onsubmit="event.preventDefault(); alert('تم إرسال ملفك الطبي بنجاح! سيقوم مستشارونا بالتواصل معك عبر الواتساب فوراً لمتابعة التقارير الطبية وعرضها على الأطباء.');">
+        <div class="grid sm:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">اسم المريض الكامل</label>
+            <input type="text" required class="w-full p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-500 bg-slate-50 transition" placeholder="محمد أحمد...">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">رقم الهاتف (مع رمز الدولة أو الواتساب)</label>
+            <input type="tel" required class="w-full p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-500 bg-slate-50 transition text-left" placeholder="+218...">
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">نوع المرض أو الحالة التشخيصية</label>
+            <select id="disease-select" class="w-full p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-500 bg-slate-50 transition font-semibold text-slate-700">
+              <option>أورام وسرطانات (بمختلف أنواعها)</option>
+              <option>مرض السكري المضاعف والمستعصي</option>
+              <option>فشل كلوي وقصور كبدي</option>
+              <option>أمراض الجهاز العصبي والضمور</option>
+              <option>حالة مستعصية أخرى</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">بلد الإقامة الحالي</label>
+            <input type="text" required class="w-full p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-500 bg-slate-50 transition" placeholder="مثال: ليبيا، الجزائر، السعودية...">
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-sm font-bold text-slate-700 mb-2">شرح تفصيلي للحالة وتاريخ المرض</label>
+          <textarea rows="4" required class="w-full p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-sky-500 bg-slate-50 transition" placeholder="يرجى كتابة الأعراض الحالية والعلاجات التي تم تلقيها سابقاً..."></textarea>
+        </div>
+
+        <div class="mb-8">
+          <label class="block text-sm font-bold text-slate-700 mb-2">رفع التقارير الطبية، صور الأشعة أو الفحوصات الجينية</label>
+          <div class="border-2 border-dashed border-slate-200 hover:border-emerald-500 rounded-2xl p-6 bg-slate-50 transition flex flex-col items-center justify-center text-center cursor-pointer relative">
+            <input type="file" multiple class="absolute inset-0 opacity-0 cursor-pointer">
+            <i class="fa-solid fa-cloud-arrow-up text-3xl text-slate-400 mb-2"></i>
+            <span class="text-sm font-bold text-slate-600">اضغط هنا لرفع الملفات (PDF, الصور)</span>
+            <span class="text-xs text-slate-400 mt-1">يمكنك تحديد ملفات متعددة لفحوصات الدم أو الأشعة المقطعية</span>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-sky-600 to-emerald-500 hover:from-sky-700 hover:to-emerald-600 text-white font-black py-4 rounded-2xl shadow-lg transition tracking-wide text-lg">
+          <i class="fa-solid fa-paper-plane ml-2"></i> إرسال الملف الطبي للجنة الاستشارية
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. التذييل (FOOTER) -->
+  <!-- ========================================== -->
+  <footer class="bg-slate-900 border-t border-slate-800 text-center py-8 mt-auto text-sm font-semibold text-slate-400">
+    <p>© 2026 Doumdeli Médical. جميع الحقوق محفوظة - تم التطوير لخدمة الإنسانية والأمل في الشفاء.</p>
+  </footer>
+
+  <!-- رابط السكريبت الرئيسي للمشروع -->
+  <script src="./app.js"></script>
+</body>
+</html>
