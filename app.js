@@ -1,65 +1,64 @@
 // ==========================================
-// 1. المورد الطبي والـ FAKE MEDICAL API للأمراض المستعصية
+// 1. COMPOSANTE LOGICIELLE : API MEDICAL DES PATHOLOGIES LOURDES
 // ==========================================
 const MEDICAL_DISEASES_DATA = [
   {
     id: "cancer",
-    name: "علاج الأورام والسرطانات بمختلف أنواعها",
-    description: "بروتوكولات علاجية متطورة تعتمد على العلاج الموجه والمناعي لتدمير الخلايا السرطانية وتحفيز نظام المناعة الذاتي دون الإضرار بالخلايا السليمة.",
-    symptoms: ["الأورام الصلبة", "سرطان الدم والأنسجة", "الحالات المتقدمة والمقاومة للعلاج التقليدي"],
-    imageUrl: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600", // صورة طبية مجهرية حقيقية لخلايا ومختبرات
-    localImage: "./images/cancer.jpg" // المسار المحلي المستقبلي لصورة المستشفى
+    name: "Oncologie & Traitements Cancéreux Avancés",
+    description: "Protocoles thérapeutiques de pointe basés sur les thérapies ciblées et l'immunothérapie cellulaire. Conçus pour détruire les cellules tumorales et stimuler le système immunitaire sans altérer les tissus sains.",
+    symptoms: ["Tumeurs solides", "Leucémies & lymphomes", "Stades avancés résistants"],
+    imageUrl: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600",
+    localImage: "./images/cancer.jpg"
   },
   {
     id: "diabetes",
-    name: "علاج مرض السكري المزمن والمضاعف",
-    description: "البروتوكول الطبي الفريد الذي تخصص فيه أطباؤنا لإعادة تأهيل خلايا البنكرياس وعلاج المقاومة الشديدة، وهو نفس العلاج الفعال الذي تماثلت به جدة مؤسس الموقع للشفاء التام.",
-    symptoms: ["السكري من النوع الأول والثاني", "مضاعفات القدم السكرية", "اعتلال الأعصاب وضغط الدم المزمن"],
-    imageUrl: "https://images.unsplash.com/photo-1611010344445-6a61111b11ae?w=600", // صورة فحص دم ومستويات سكر دقيقة
+    name: "Prise en Charge du Diabète Chronique & Sévère",
+    description: "Un protocole clinique d'exception dédié à la régénération des cellules pancréatiques et au traitement de l'insulinorésistance critique. Ce traitement de rupture a permis la rémission totale de membres de notre propre famille.",
+    symptoms: ["Diabète Type 1 & 2", "Complications du pied diabétique", "Neuropathies & troubles artériels"],
+    imageUrl: "https://images.unsplash.com/photo-1611010344445-6a61111b11ae?w=600",
     localImage: "./images/diabetes.jpg"
   },
   {
     id: "kidney",
-    name: "قصور الكلى والفشل الكبدي المستعصي",
-    description: "برامج متكاملة لتجديد وظائف الأعضاء الحيوية وتحسين الفلترة الطبيعية للجسم لتجنيب المرضى مغبة غسيل الكلى المستمر وإعادة التوازن البيولوجي.",
-    symptoms: ["الفشل الكلوي الحاد والمزمن", "تليف وتضخم الكبد", "اضطرابات الإنزيمات والسموم المتراكمة"],
-    imageUrl: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=600", // صورة فحص إشعاعي ومتابعة طبية حقيقية
+    name: "Insuffisance Rénale & Pathologies Hépatiques",
+    description: "Programmes intégrés de restauration des fonctions vitales et d'optimisation de la filtration biologique. L'objectif est de stabiliser l'organisme et d'éviter autant que possible les protocoles lourds de dialyse continue.",
+    symptoms: ["Insuffisance rénale aiguë/chronique", "Cirrhose & stéatose hépatique", "Syndromes métaboliques complexes"],
+    imageUrl: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=600",
     localImage: "./images/kidney.jpg"
   },
   {
     id: "neurology",
-    name: "أمراض الجهاز العصبي والضمور والعمود الفقري",
-    description: "تشخيص وعلاج الاضطرابات العصبية المعقدة وحالات الشلل والضمور العضلي باستخدام تقنيات تحفيز الخلايا وتنشيط الإشارات العصبية المركزية.",
-    symptoms: ["ضمور العضلات والأعصاب", "آلام وتآكل غضاريف العمود الفقري", "تأهيل الجلطات الدماغية المقاومة"],
-    imageUrl: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600", // صورة تشريحية للدماغ والأعصاب
+    name: "Neurologie, Atrophies & Pathologies Rachidiennes",
+    description: "Diagnostic de précision et protocoles de stimulation cellulaire pour les troubles neurologiques complexes, paralysies et atrophies musculaires, visant à restaurer la transmission des signaux nerveux centraux.",
+    symptoms: ["Atrophies musculaires & nerveuses", "Discopathies & usure du rachis", "Réhabilitation post-AVC complexe"],
+    imageUrl: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600",
     localImage: "./images/neurology.jpg"
   }
 ];
 
 // ==========================================
-// 2. دالة رندرة وعرض البيانات ديناميكياً في الواجهة
+// 2. FONCTION DE RENDU DYNAMIQUE DE L'INTERFACE CLINIQUE
 // ==========================================
 function renderMedicalDiseases() {
   const gridContainer = document.getElementById('diseases-grid');
   if (!gridContainer) return;
 
-  // تنظيف اللودر المؤقت
+  // Purge du loader temporaire
   gridContainer.innerHTML = '';
 
-  // توليد كروت الأمراض
+  // Génération des cartes médicales
   MEDICAL_DISEASES_DATA.forEach((disease) => {
     const card = document.createElement('div');
-    card.className = "bg-white rounded-3xl overflow-hidden shadow-md shadow-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-slate-100 flex flex-col text-right";
+    card.className = "bg-white rounded-3xl overflow-hidden shadow-md shadow-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-slate-100 flex flex-col text-left";
     
     card.innerHTML = `
       <div class="relative h-56 w-full bg-slate-100 overflow-hidden">
-        <!-- يتم محاولة تحميل الصورة المحلية أولاً، وإذا لم توجد (onerror) يتم سحب الصورة الحقيقية الحية من الـ API مباشرة -->
         <img src="${disease.localImage}" 
              onerror="this.onerror=null; this.src='${disease.imageUrl}';" 
              alt="${disease.name}" 
              class="w-full h-full object-cover transition duration-500 hover:scale-105">
-        <div class="absolute top-4 right-4 bg-sky-600/90 backdrop-blur-md text-white text-xs font-black px-3 py-1.5 rounded-xl shadow-sm">
-          <i class="fa-solid fa-microscope ml-1"></i> حالة مستهدفة
+        <div class="absolute top-4 left-4 bg-sky-600/90 backdrop-blur-md text-white text-xs font-black px-3 py-1.5 rounded-xl shadow-sm">
+          <i class="fa-solid fa-microscope mr-1"></i> Pôle Clinique
         </div>
       </div>
       
@@ -68,11 +67,11 @@ function renderMedicalDiseases() {
         <p class="text-slate-600 text-sm font-medium leading-relaxed mb-4">${disease.description}</p>
         
         <div class="mt-auto pt-4 border-t border-slate-50">
-          <span class="text-xs font-bold text-slate-400 block mb-2">أبرز الحالات التي يتم علاجها:</span>
+          <span class="text-xs font-bold text-slate-400 block mb-2">Cas cliniques pris en charge :</span>
           <div class="flex flex-wrap gap-1.5">
             ${disease.symptoms.map(symptom => `
               <span class="bg-slate-50 text-slate-700 text-xs font-bold px-2.5 py-1.5 rounded-lg border border-slate-100">
-                <i class="fa-solid fa-check text-emerald-500 ml-1"></i> ${symptom}
+                <i class="fa-solid fa-check text-emerald-500 mr-1"></i> ${symptom}
               </span>
             `).join('')}
           </div>
@@ -85,19 +84,19 @@ function renderMedicalDiseases() {
 }
 
 // ==========================================
-// 3. تسجيل الـ SERVICE WORKER الطبي
+// 3. ENREGISTREMENT DU SERVICE WORKER MEDICAL
 // ==========================================
 function registerMedicalServiceWorker() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('🏥 [Doumdeli Medical] SW المسئول عن حماية المرضى والعمل Offline يعمل بنجاح!', reg.scope))
-        .catch(err => console.error('⚠️ [Doumdeli Medical] فشل تسجيل الـ SW:', err));
+        .then(reg => console.log('🏥 [Doumdeli Medical] SW d\'accès hors-ligne activé avec succès !', reg.scope))
+        .catch(err => console.error('⚠️ [Doumdeli Medical] Échec de l\'enregistrement du SW :', err));
     });
   }
 }
 
-// تشغيل النظام فور جاهزية وثيقة الـ DOM
+// Initialisation dès chargement complet du DOM
 document.addEventListener('DOMContentLoaded', () => {
   renderMedicalDiseases();
   registerMedicalServiceWorker();
