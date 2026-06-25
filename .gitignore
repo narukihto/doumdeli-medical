@@ -1,0 +1,16 @@
+# Dossiers de compilation et fichiers temporaires générés par Bubblewrap & Android
+/android-build-dir/
+/android-output/
+/.bubblewrap/
+npm-debug.log*
+
+# Fichiers de signature numérique et clés secrètes (Protection stricte contre les fuites publiques)
+*.keystore
+*.jks
+*.p12
+
+# Fichiers système, caches d'éditeurs et résidus d'exécution locale
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
