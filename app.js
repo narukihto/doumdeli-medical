@@ -50,7 +50,7 @@ function renderMedicalDiseases() {
   MEDICAL_DISEASES_DATA.forEach((disease) => {
     const card = document.createElement('div');
     card.className = "bg-white rounded-3xl overflow-hidden shadow-md shadow-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-slate-100 flex flex-col text-left";
-    
+
     card.innerHTML = `
       <div class="relative h-56 w-full bg-slate-100 overflow-hidden">
         <img src="${disease.localImage}" 
@@ -78,7 +78,7 @@ function renderMedicalDiseases() {
         </div>
       </div>
     `;
-    
+
     gridContainer.appendChild(card);
   });
 }
@@ -90,8 +90,8 @@ function registerMedicalServiceWorker() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('🏥 [Doumdeli Medical] SW d\'accès hors-ligne activé avec succès !', reg.scope))
-        .catch(err => console.error('⚠️ [Doumdeli Medical] Échec de l\'enregistrement du SW :', err));
+        .then(reg => console.log('🏥 [Doumdeli Médical Naturel Africa] SW d\'accès hors-ligne activé avec succès !', reg.scope))
+        .catch(err => console.error('⚠️ [Doumdeli Médical Naturel Africa] Échec de l\'enregistrement du SW :', err));
     });
   }
 }
