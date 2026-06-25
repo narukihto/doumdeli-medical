@@ -1,7 +1,7 @@
 {
   "short_name": "DoumdeliMed",
-  "name": "Doumdeli Médical - الأمل في الشفاء",
-  "description": "منصتكم الطبية والوسيط المعتمد لعلاج الأمراض المستعصية والمزمنة بأحدث البروتوكولات العلاجية العالمية.",
+  "name": "Doumdeli Médical - Espoir de Guérison",
+  "description": "Votre passerelle de santé internationale pour la prise en charge des pathologies complexes et chroniques par des protocoles médicaux d'exception.",
   "icons": [
     {
       "src": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=192",
@@ -22,6 +22,6 @@
   "display": "standalone",
   "orientation": "portrait",
   "categories": ["medical", "health"],
-  "lang": "ar-SA",
-  "dir": "rtl"
+  "lang": "fr-FR",
+  "dir": "ltr"
 }
