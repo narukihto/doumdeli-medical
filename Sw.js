@@ -1,7 +1,8 @@
 // ==========================================
 // 1. CONFIGURATION DU NOYAU DE CACHE MEDICAL
 // ==========================================
-const CACHE_NAME = 'doumdeli-medical-v1';
+// تم تحديث الإصدار إلى v2 لإجبار المتصفح على تطبيق الهوية والشعار الجديدين فوراً
+const CACHE_NAME = 'doumdeli-medical-v2';
 
 // Actifs statiques assurant le fonctionnement offline pour la coordination internationale
 const STATIC_ASSETS = [
